@@ -11,6 +11,7 @@ inoremap <expr> <silent> <Plug>(sacp_cache_fuzzy_bufferkeyword_complete)  sacpbu
 
 let s:sacpDefaultFileTypesEnable = { "php":1, "markdown":1, "text":1, "go":1}
 let g:sacpDefaultFileTypesEnable = get(g:,'sacpDefaultFileTypesEnable',s:sacpDefaultFileTypesEnable)
+let g:sacpDefaultKeyMapEnable    = get(g:,'sacpDefaultKeyMapEnable',1)
 
 " php
 if get(g:sacpDefaultFileTypesEnable,'php',0) == 1

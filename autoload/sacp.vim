@@ -46,9 +46,11 @@ function! sacp#enableForThisBuffer(options)
 	" https://groups.google.com/forum/#!topic/vim_dev/WeBBjkXE8H8
 	silent! setlocal shortmess+=c
 
-	inoremap <expr> <buffer> <silent> <TAB>  pumvisible()?"\<C-n>":"\<TAB>"
-	inoremap <expr> <buffer> <silent> <S-TAB>  pumvisible()?"\<C-p>":"\<TAB>"
-	inoremap <expr> <buffer> <silent> <CR>  pumvisible()?"\<C-y>":"\<CR>"
+	if g:sacpDefaultKeyMapEnable==1
+		inoremap <expr> <buffer> <silent> <TAB>  pumvisible()?"\<C-n>":"\<TAB>"
+		inoremap <expr> <buffer> <silent> <S-TAB>  pumvisible()?"\<C-p>":"\<TAB>"
+		inoremap <expr> <buffer> <silent> <CR>  pumvisible()?"\<C-y>":"\<CR>"
+	endif
 
 endfunction
 

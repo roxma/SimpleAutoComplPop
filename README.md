@@ -30,8 +30,6 @@ This demo requires [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.v
 
 ## Golang
 
-This demo requires [vim-go](https://github.com/fatih/vim-go).
-
 ```vim
 	" 1. variables are all defined in current scope, use keyword from current
 	" buffer for completion `<C-x><C-n>`
@@ -43,6 +41,8 @@ This demo requires [vim-go](https://github.com/fatih/vim-go).
 				\ ]
 				\ })
 ```
+
+This demo requires [vim-go](https://github.com/fatih/vim-go).
 
 ![go_demo](https://github.com/roxma/SimpleAutoComplPop.img/blob/master/usage_go_demo.gif)
 

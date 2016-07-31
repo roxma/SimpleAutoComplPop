@@ -14,12 +14,6 @@ markdown files.
 
 ## PHP
 
-Currently, this is the default php pattern, use omnicomplete's `<C-X><C-o>` key
-to for completion.
-
-Install [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim) and
-have a try.
-
 ```vim
 	autocmd FileType php,php5,php7 call sacp#enableForThisBuffer({ "matches": [
 				\ { '=~': '\v[a-zA-Z]{4}$', 'feedkeys': "\<C-x>\<C-o>"},
@@ -29,11 +23,14 @@ have a try.
 				\ })
 ```
 
+This demo requires [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim).
+
+
 ![php_demo](https://github.com/roxma/SimpleAutoComplPop.img/blob/master/usage_php_demo.gif)
 
 ## Golang
 
-This demo requires [vim-go](https://github.com/fatih/vim-go) plugin.
+This demo requires [vim-go](https://github.com/fatih/vim-go).
 
 ```vim
 	" 1. variables are all defined in current scope, use keyword from current
@@ -49,10 +46,10 @@ This demo requires [vim-go](https://github.com/fatih/vim-go) plugin.
 
 ![go_demo](https://github.com/roxma/SimpleAutoComplPop.img/blob/master/usage_go_demo.gif)
 
-This  looks ok. However SimpleAutoComplPop provide **a slightly improved
+Seems good. While SACP provides **a slightly improved
 plugin key
 [`<Plug>(sacp_cache_fuzzy_omnicomplete)`](#plugsacp_cache_fuzzy_omnicomplete)**.
-Check the [Advanced Features](#advanced-features) section For more information.
+Check the [Advanced Features](#advanced-features) section For more details.
 
 
 ## Configiration Options Explained

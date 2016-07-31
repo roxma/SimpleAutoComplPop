@@ -2,36 +2,10 @@
 
 A simplified fork from [vim-scripts/AutoComplPop](https://github.com/vim-scripts/AutoComplPop)
 
-# Why I Create This Plugin?
-
-I'm a PHP developer, and currently I'm using neovim. 
-
-- [Neocomplete](https://github.com/Shougo/neocomplete.vim) needs `if_lua`,
-	which is not possible with neovim currently.
-- ~~With [deoplete](https://github.com/Shougo/deoplete.nvim) framework,
-    currently the only option is
-    [phpcomplete-extended](https://github.com/m2mdas/phpcomplete-extended).
-    But phpcomplete_extended seems to be unmaintained right now, the latest
-    comment is from two years ago.~~
-- [YCM](https://github.com/Valloric/YouCompleteMe) is really a great one. But
-    It's just too heavy for me, it significantly slows down my vim's startup
-    time.
-- The origional [AutoComplPop](https://github.com/vim-scripts/AutoComplPop) is
-	a little bit complicated, and hard to extend for me.
-- I know I would be re-inventing the wheel but I just couldn't stop it :joy:
-
-Finally I decided to create my own SimpleAutoComplPop, focus on **easy to
-use**, and **easy to be extended** for your own use cases. SimpleAutoComplPop
-is **pure vimscript**, and it **maps keys on a per-buffer basis**. Technically
-it will not conflict with other auto-complete plugin if you configure
-carefully. 
-
-As a **lightweight** plugin, the [default auto-complete-popup
-behavior](plugin/sacp.vim) provideed by this plugin only covers `.php`, `.txt`,
-`.markdown`, and `.go` files, for demonstration purpose.  If you have a good
-configuration to share, please send me a gist url or a your github repo url,
-I'll add it into this README.md or probably created a wiki page for nice
-configurations for other filetypes.
+SimpleAutoComplPop is a **lightweight**, **pure vimscript** plugin, which
+focuses on **easy to use**, and **easy to be extended** for your own use cases.
+SACP **maps keys on a per-buffer basis**. Technically it will not conflict with
+other auto-complete plugin if you configure carefully. 
 
 # Usage
 
@@ -40,7 +14,10 @@ configurations for other filetypes.
 Currently, this is the default php pattern, use omnicomplete's `<C-X><C-o>` key
 to for completion.
 
-```vimscript
+Install [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim) and
+have a try.
+
+```vim
 	autocmd FileType php,php5,php7 call sacp#enableForThisBuffer({ "matches": [
 				\ { '=~': '\v[a-zA-Z]{4}$', 'feedkeys': "\<C-x>\<C-o>"},
 				\ { '=~': '::$'           , 'feedkeys': "\<C-x>\<C-o>"},
@@ -49,14 +26,13 @@ to for completion.
 				\ })
 ```
 
-Demo with [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim).
-Press `<TAB>` to select the popup menu.
-
 ![php_demo](https://github.com/roxma/SimpleAutoComplPop.img/blob/master/usage_php_demo.gif)
 
 ## Golang
 
-```
+This demo requires [vim-go](https://github.com/fatih/vim-go) plugin.
+
+```vim
 	" 1. variables are all defined in current scope, use keyword from current
 	" buffer for completion `<C-x><C-n>`
 	" 2. When the '.' is pressed, use smarter omnicomplete `<C-x><C-o>`, this
@@ -68,16 +44,9 @@ Press `<TAB>` to select the popup menu.
 				\ })
 ```
 
-The special dot character `'.'` needs `'ignoreCompletionMode'` to be set to
-work with [vim-go](https://github.com/fatih/vim-go), see the
-[#configiration-options-explained](#configiration-options-explained) for more
-details.
-
-Demo with [vim-go](https://github.com/fatih/vim-go)
-
 ![go_demo](https://github.com/roxma/SimpleAutoComplPop.img/blob/master/usage_go_demo.gif)
 
-This demo looks ok. However SimpleAutoComplPop provide **a slightly improved
+This  looks ok. However SimpleAutoComplPop provide **a slightly improved
 plugin key
 [`<Plug>(sacp_cache_fuzzy_omnicomplete)`](#plugsacp_cache_fuzzy_omnicomplete)**.
 Check the [Advanced Features](#advanced-features) section For more information.

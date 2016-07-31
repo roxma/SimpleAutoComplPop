@@ -9,6 +9,9 @@ other auto-complete plugin if you configure carefully.
 
 # Usage
 
+Currently, SACP only provides default configurations for php, go, txt and
+markdown files.
+
 ## PHP
 
 Currently, this is the default php pattern, use omnicomplete's `<C-X><C-o>` key
@@ -54,7 +57,7 @@ Check the [Advanced Features](#advanced-features) section For more information.
 
 ## Configiration Options Explained
 
-- To disable SimpleAutoComplPop, add `let g:sacpEnable = 0` to your vimrc file.
+- To disable SACP, add `let g:sacpEnable = 0` to your vimrc file.
 - To enable the default auto-complete-popup behavior for php only, add `let
     g:sacpDefaultFileTypesEnable = {"php":1}` to your vimrc file.
 - **sacp#enableForThisBuffer** options: 
@@ -69,17 +72,13 @@ Check the [Advanced Features](#advanced-features) section For more information.
             I proceed the typing to `htt<C-X><C-O>p.`.  When the `.` is typed
             the popup menu is gone, but the event `CompleteDone` event is not
             triggered. Set the `ignoreCompletionMode` to `1` would force
-            SimpleAutoComplPop to feed the `<C-X><C-O>` keys..
+            SACP to feed the `<C-X><C-O>` keys..
     - **completeopt**, the default value for this option is
         `"menu,menuone,noinsert,noselect"`, set it to `"menu,menuone,noinsert"`
         if you want the first hint to be selected by default.
 
 
 ## Advanced Features
-
-I'm planning on add some advanced features based on SimpleAutoComplPop's
-lightweight core, while these features will not be loaded into vim if you don't
-use them. Read the following description if you are interested:
 
 ### `<Plug>(sacp_cache_fuzzy_omnicomplete)`
 

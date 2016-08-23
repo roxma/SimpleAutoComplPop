@@ -49,7 +49,9 @@ function! sacp#enableForThisBuffer(options)
 	if g:sacpDefaultKeyMapEnable==1
 		inoremap <expr> <buffer> <silent> <TAB>  pumvisible()?"\<C-n>":"\<TAB>"
 		inoremap <expr> <buffer> <silent> <S-TAB>  pumvisible()?"\<C-p>":"\<TAB>"
-		inoremap <expr> <buffer> <silent> <CR>  pumvisible()?"\<C-y>":"\<CR>"
+		" this key is unnecessary, and it's very much likely to conflits with
+		" other plugins, auto-pairs for example
+		" inoremap <expr> <buffer> <silent> <CR>  pumvisible()?"\<C-y>":"\<CR>"
 	endif
 
 endfunction

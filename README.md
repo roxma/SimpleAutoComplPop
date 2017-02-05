@@ -1,5 +1,10 @@
 # SimpleAutoComplPop
 
+**Note: I'm not mantaining this plugin anymore, in favor of
+[nvim-completion-manager](https://github.com/roxma/nvim-completion-manager).
+If you have plans for improving this plugin by yourself, please contact me, I'll
+transfer the project ownership.**
+
 A simplified fork from [vim-scripts/AutoComplPop](https://github.com/vim-scripts/AutoComplPop)
 
 SimpleAutoComplPop is a **lightweight**, **pure vimscript** plugin, which
